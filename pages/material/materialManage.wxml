@@ -1,0 +1,39 @@
+<view class="">
+	<view class="menus">
+		<navigator class="all bg6" url='materialList/materialList'><text>全部物料</text><image class="icon" src='../../image/wlist.png'></image></navigator>
+		<navigator class="saleStat bg7" url='../statistic/statistic'><text>销售统计</text><image class="icon" src='../../image/wbar.png'></image></navigator>
+		<view class="block bg5" bindlongpress="editCatalog" bindtap='toList' data-id='123'><text>类别1</text><image class="icon" src='../../image/tool1.png'></image></view>
+		<view class="block bg3"><text>类别2</text><image class="icon" src='../../image/tool2.png'></image></view>
+		<view class="block bg2"><image class="icon" src='../../image/tool3.png'></image><text>类别3</text></view>
+		<view class="block bg5"><text>类别4</text></view>
+		<view class="block bg3"><text>类别5</text></view>
+		<!-- <navigator class="block addCatalog bg0" url='editCatalog/editCatalog?mode=add'><text></text><image src='../../image/add.png'></image></navigator> -->
+		<button class="block addCatalog bg0" bindtap='showDialogBtn'><text></text><image src='../../image/add.png'></image></button>
+
+
+		
+	</view>
+</view>
+<!--弹窗-->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">编辑类别</view>
+  <view class="modal-content">
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="类别名称"></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="备注"></input>
+    </view>
+    <view class="modal-input">
+      <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="标签"></input>
+    </view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+  </view>
+</view>
+<view class="fixed-bottom-tip">
+	长按类别进行编辑
+</view>

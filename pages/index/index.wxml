@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="supplierInfo">
+    <view class="supplierName">{{supplierInfo.supplierName}}</view>
+    <view class="phone">{{supplierInfo.phone}}</view>
+    <view class="address">{{supplierInfo.address}}</view>
+  </view>
+
+  <navigator class="about" url='../about/about'>
+    <image class="setting-icon" src='../../image/settings.png'></image>
+     <view class="weui-badge weui-badge_dot" style="margin-bottom: 60rpx;margin-left: -10rpx;"></view>
+
+
+  </navigator>
+  <view class="news weui-panel">
+    <view class="neworders weui-cell ">
+     <!--  <view class="news-title ">
+        订单
+      </view>    -->            
+      <!-- <block wx:if="{{true}}" >
+        <view class="non-neworders non weui-panel__hd">暂无新订单</view>
+      </block> -->
+      <block wx:if="{{true}}">        
+        <view class="weui-panel__bd" >
+          <block wx:for="{{newOrders}}" wx:key='item'>
+            <navigator url ="{{item.orderno}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">[订单]{{item.orderdeptname}}-{{item.orderusername}}</view>
+                <view class="weui-media-box__desc">下单日期:{{item.orderdate}}|交货日期:{{item.plandate}}</view>
+              </view>
+            </navigator>
+          </block>
+        </view>
+      </block>
+      <!-- <view class="weui-panel__ft"  bindtap='moreOrder'>
+        <view class="weui-cell weui-cell_access weui-cell_link">
+          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view> -->
+    </view>
+    <view class="newQA weui-cell ">            
+     <!--  <block wx:if="{{false}}" >
+        <view class="non-newQA non weui-panel__hd">暂无新质检</view>
+      </block> -->
+      <block wx:if="{{true}}">        
+        <view class="weui-panel__bd" >
+          <block wx:for="{{newQA}}" wx:key='item'>
+           <navigator url ="{{item.qualityid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title">[质检]质检日期-{{item.qualitydate}}</view>
+              <view class="weui-media-box__desc">质检人:{{item.qualityusername}}</view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+    </block>
+    <!-- <view class="weui-panel__ft" bindtap='moreQA'>
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd">查看更多</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view> -->
+
+  </view>
+
+  <view class="newreceviced weui-cell">
+   <!--  <block wx:if="{{false}}" >
+      <view class="non-newreceviced non weui-panel__hd">暂无新到货</view>
+    </block> -->
+    <block wx:if="{{true}}">        
+      <view class="weui-panel__bd" >
+        <block wx:for="{{newReceived}}" wx:key='item'>
+         <navigator url ="{{item.receiveid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">[物流]订单{{item.order}}</view>
+            <view class="weui-media-box__desc">收货日期:{{item.receivedate}}|发货日期:{{item.deliverydate}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </block>
+  <!-- <view class="weui-panel__ft" bindtap='moreDeli'>
+    <view class="weui-cell weui-cell_access weui-cell_link">
+      <view class="weui-cell__bd">查看更多</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+  </view> -->
+</view>
+
+</view>
+</view>
+

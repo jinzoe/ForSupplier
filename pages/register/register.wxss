@@ -1,0 +1,13 @@
+/* pages/register/register.wxss */
+.register-header{
+	color:  rgb(50,69,76);
+	font-size: 2em;
+	text-align: center;
+	margin: 30rpx auto;
+}
+.weui-label{
+	color: rgb(63,93,101);
+}
+.weui-btn{
+	margin-top: 200rpx;
+}

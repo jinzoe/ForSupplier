@@ -1,0 +1,34 @@
+<view class='container'>
+	<view class="section">
+  <!-- <view class="section__title"></view> -->
+	    <view bindClick="radioChange" class="inline">
+	      <label class="radio-container" wx:for="{{radioItems}}" wx:key="value">
+	           <view class="inline">{{item.name}}</view>
+	           <view class="doublr-tri inline">
+	           		 <i class="t-tri"></i>
+	           		 <i class="b-tri"></i>
+	           </view> 
+	      </label>
+	  </view>
+	    <picker bindchange="bindPickerChange" value="{{index2}}" range="{{array2}}"  class="inline">
+	      <view class="picker2 inline">
+	        {{array2[index2]}}  <i class="triangle"></i>
+	      </view>
+	    </picker>
+ 	</view> 
+	<view class='weui-panel'>
+		<view class="weui-panel__bd" >
+			<block wx:for="{{QAs}}" wx:key='item'>
+				<navigator url ="../QADetail/QADetail?id={{item.qualityid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+					<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+						<view class="weui-media-box__title">质检日期-{{item.qualitydate}}</view>
+						<view class="weui-media-box__desc">质检人:{{item.qualityusername}}</view>
+					</view>
+				</navigator>
+			</block>
+		</view>
+	</view>
+	<view class="QAstat">
+		<navigator class="add-btn" url='../statistic/statistic?tab=1'><text>质检\n统计</text></navigator>
+	</view>
+</view>

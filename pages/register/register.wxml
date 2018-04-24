@@ -1,0 +1,68 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+	<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tipContent}}</view>
+
+	<view class="weui-cells weui-cells_after-title">
+		<view class="register-header">
+			注册成为供应商
+		</view>
+		<view class="weui-cell weui-cell_input">
+			<view class="weui-cell__hd">
+				<view class="weui-label">供应商名</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='nameIn' placeholder="请输入名称"/>
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+			<view class="weui-cell__hd">
+				<view class="weui-label">类型</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='typeIn' placeholder="请输入供应商品类型" />
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+			<view class="weui-cell__hd">
+				<view class="weui-label">地址</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='addressIn' placeholder="请输入所在地" />
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+			<view class="weui-cell__hd">
+				<view class="weui-label">手机</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='phoneIn' placeholder="请输入手机号码" />
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+			<view class="weui-cell__hd">
+				<view class="weui-label">登录名</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='logNameIn' placeholder="作为您的登陆凭证" />
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+			<view class="weui-cell__hd">
+				<view class="weui-label">密码</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='pwdIn' type="password" placeholder="请输入密码" />
+			</view>
+		</view>
+		<view class="weui-cell weui-cell_input weui-cell_vcode">
+			<view class="weui-cell__hd">
+				<view class="weui-label">确认密码</view>
+			</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input" bindinput='repwdIn' type="password" placeholder="确认密码" />
+			</view>
+		</view>
+	</view>
+	<button class="weui-btn submit-btn" bindtap='submit'>提交</button>
+</view>
+

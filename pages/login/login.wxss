@@ -1,0 +1,63 @@
+/* pages/login/login.wxss */
+page{
+	height: 100%;
+}
+.big-circle{
+	width: 200rpx;
+	height: 200rpx;
+	border-radius: 100rpx;
+	background-color: white;
+	margin-top: 80rpx;
+	left: 278rpx; 
+	position: absolute;
+}
+.small-circle{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50rpx;
+	background-color: rgb(109,201,201);
+	margin:51rpx;
+}
+.upper-container{
+	background-color: rgb(109,201,201);
+	height: 35%;
+	text-align: center;
+	line-height: 650rpx;
+	color: white;
+}
+
+.lower-container{
+	background-color: rgb(63,93,101);
+	height: 65%;
+}
+.log-info{
+	padding-top: 40rpx;
+}
+.input-holder{
+	width: 90%;
+	height: 80rpx;
+	border-radius: 10rpx;
+	background-color: rgb(50,69,76);
+	margin: 20rpx;
+}
+.weui-cell{
+	position: static;
+}
+.weui-input{
+	padding-left: 20rpx;
+}
+.bottom-button{
+	margin-top: 270rpx;
+}
+.bottom-button > navigator{
+	color: grey;
+	text-align: center;
+	font-size: 0.8em;
+	margin-bottom: 20rpx;
+	text-decoration: underline;
+}
+.bottom-button > button{
+	background-color: rgb(109,201,201);
+	color: white;
+	width: 550rpx;
+}

@@ -1,0 +1,12 @@
+.profile{
+	height: 200rpx;
+}
+.add,.minus{
+	height: 40rpx;
+	width: 40rpx;
+	float: right;
+}
+.half-line{
+	width: 45%;
+	float: left;
+}

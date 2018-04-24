@@ -1,0 +1,12 @@
+.m-name{
+	width: 30%;
+}
+.m-unit{
+	width: 15%;
+}
+.m-desc{
+	width: 55%;
+}
+.m-desc.td{
+	font-size: 15px;
+}

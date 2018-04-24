@@ -1,0 +1,42 @@
+<view class='container'>
+	<view class="section">
+  <!-- <view class="section__title"></view> -->
+    <view bindClick="radioChange" class="inline">
+      <label class="radio-container" wx:for="{{radioItems}}" wx:key="value">
+           <view class="inline">{{item.name}}</view>
+           <view class="doublr-tri inline">
+           		 <i class="t-tri"></i>
+           		 <i class="b-tri"></i>
+           </view> 
+      </label>
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index1}}" range="{{array1}}"  class="inline">
+      <view class="picker1 inline">
+        {{array1[index1]}}  <i class="triangle"></i>
+      </view>
+    </picker>
+    <picker bindchange="bindPickerChange" value="{{index2}}" range="{{array2}}"  class="inline">
+      <view class="picker2 inline">
+        {{array2[index2]}}  <i class="triangle"></i>
+      </view>
+    </picker>
+ </view> 
+	<view class='weui-panel'>
+		<view class="weui-panel__bd">
+			<block wx:for="{{orders}}" wx:key='item'>
+				<view bindtap='clickOrder' data-id='{{item.uid}}' class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+					<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+						<view class="weui-media-box__title__td">
+							{{item.uid}} 
+							{{item.orderdeptname}}
+						</view>
+						<view class="weui-media-box__desc">下单日期:{{item.orderdate}} | 交货日期:{{item.plandate}}</view>
+					</view>
+					<view class="weui-media-box__td">
+						{{item.total}}
+					</view>
+				</view>
+			</block>
+		</view>
+	</view>
+</view>

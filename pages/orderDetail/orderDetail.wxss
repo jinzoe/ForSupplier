@@ -1,0 +1,12 @@
+.m-name{
+	width: 35%;
+}
+.m-spec{
+	width: 30%;
+}
+.m-num{
+	width: 20%;
+}
+.m-unit{
+	width: 15%;
+}

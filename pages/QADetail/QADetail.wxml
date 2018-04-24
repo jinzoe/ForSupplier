@@ -1,0 +1,30 @@
+<view class="page container">
+    <view class="page__hd">
+        <view class="page__title">{{QAInfo.QualityDate}}</view>
+        <view class="page__desc">质检人：{{QAInfo.QualityUserName}}</view>
+    </view>
+    <view class='page__bd'>
+    	<view class="table">
+		  <view class="tr bg1">
+		    <view class="th m-name">物料</view>
+		    <view class="th m-unit">结果</view>
+		    <view class="th m-desc ">详细备注</view>
+		  </view>
+		  <block wx:for="{{QAInfo.Materials}}" wx:key="{{code}}">
+		    <view class="tr bg8" wx:if="{{index % 2 == 0}}">
+		      <view class="td m-name">{{item.MaterialName}}</view>
+		      <view class="td m-status"  wx:if="{{item.status=='1'}}">√</view>
+		      <view class="td m-status"  wx:if="{{item.status=='2'}}">X</view>
+		      <view class="td m-desc">{{item.Description}}</view>
+		    </view>
+		    <view class="tr bg7" wx:else>
+		      <view class="td m-name">{{item.MaterialName}}</view>
+		      <view class="td m-status"  wx:if="{{item.status=='1'}}">√</view>
+		      <view class="td m-status"  wx:if="{{item.status=='2'}}">X</view>
+		      <view class="td m-desc">{{item.Description}}</view>
+		    </view>
+		  </block>
+		</view>
+		<button class="submit-btn">联系对方</button>
+    </view>
+</view>

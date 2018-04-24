@@ -1,0 +1,284 @@
+<!--pages/register/register.wxml-->
+<view class="container">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">
+        {{tipContent}}
+    </view>
+    <view class="weui-cells__title">
+        基本信息
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    供应商名
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="name" placeholder="" value="{{s.name}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    类型
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <select bindinput="textIn" class="weui-select" data-prop="type" placeholder="">
+                </select>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    地址
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="address" placeholder="" value="{{s.address}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    手机
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="contact"  value="{{s.phonenum}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    传真
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="fax" placeholder="" value="{{s.fax}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    邮编
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="postcode" placeholder="" value="{{k.postcode}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    法人
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="legalperson" placeholder="" value="{{s.legalperson}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    注册资金
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="registeredmoney" placeholder="" value="{{s.registeredmoney}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    公司成立时间
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker bindchange="textIn" data-prop="establishedtime" end="2018-06-01" mode="date" start="1900-09-01" value="{{date}}">
+                    <view class="weui-input">
+                        {{date}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode profile">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    公司简介
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <textarea bindinput="textIn" class="weui-input" data-prop="profile" placeholder="" value="{{s.profile}}">
+                </textarea>
+            </view>
+        </view>
+        <view class="weui-cell">
+            <view class="weui-cells__hd">
+                <view class="weui-label">
+                    营业执照
+                </view>
+            </view>
+            <view class="weui-uploader">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{deliPics}}" wx:key="*this">
+                        <view class="weui-uploader__file" id="{{item}}" style="position: relative;">
+                            <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{item}}">
+                            </image>
+                            <view bindtap="deletePic" class="weui-badge" data-index="{{index}}" style="position: absolute;top: -.4em;right: -.4em;">
+                            </view>
+                        </view>
+                    </block>
+                    <view class="weui-uploader__input-box">
+                        <view bindtap="chooseImage" class="weui-uploader__input">
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells__title">
+        开票信息
+    </view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    纳税人识别号
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="taxid" placeholder="" value="{{k.taxid}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    抬头名称
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="name" placeholder="" value="{{k.name}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    开户行
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="blank" placeholder="" value="{{k.blank}}"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    银行账号
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" class="weui-input" data-prop="account" placeholder="" value="{{k.account}}"/>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cells__title">
+        联系人信息
+        <image bindtap="addPerson" class="add" src="../../image/rounded-add.png">
+        </image>
+    </view>
+    <view class="contact-persons" wx:for="{{contactPersons}}" wx:if="{{showp}}{{index}}?true;{{showp}}{{index}}">
+        <view class="weui-cells__title">
+            联系人{{index+1}}
+            <image bindtap="delPerson" class="minus" data-index="{{index}}" src="../../image/rounded-minus.png">
+            </image>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="contact-p">
+                <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            姓名
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="contactname" placeholder="" value="{{item.name}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            性别
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="sex" placeholder="" value="{{item.sex}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            QQ
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="qq" placeholder="" value="{{item.qq}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            微信
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="wechat" placeholder="" value="{{item.wechat}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            邮箱
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="email" placeholder="" value="{{item.email}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode half-line">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            职位
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="position" placeholder="" value="{{item.position}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            手机号码
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="phonenum" placeholder="" value="{{item.phonenum}}"/>
+                    </view>
+                </view>
+                <view class="weui-cell weui-cell_input weui-cell_vcode">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">
+                            办公号码
+                        </view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <input bindinput="textIn" class="weui-input" data-prop="officecall" placeholder="" value="{{item.officecall}}"/>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <button bindtap="submit" class="weui-btn submit-btn">
+        提交
+    </button>
+</view>

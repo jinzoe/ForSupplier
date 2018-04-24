@@ -1,0 +1,177 @@
+<view class="container">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                物料条码
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <input bindinput="textIn" data-prop="barcode" class="weui-input" placeholder="手动输入或扫描" value="{{barcode}}" />
+             <image bindtap='scan' class='scan' src="../../../image/barcode.svg"></image>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                物料名
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <input bindinput="textIn" data-prop="materialname" class="weui-input" placeholder="请输入名称"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                物料号
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <input bindinput="textIn" data-prop="materialno" class="weui-input" placeholder="请输入编号"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                物料类型
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <picker bindinput="" class="weui-input" placeholder="请选择供应商品类型"></picker>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input cells">
+        <view class="cell1 ce">
+            <view class="weui-label">
+                规格
+            </view>
+            <input bindinput="textIn" data-prop="spec" class="" placeholder="X*Y"/>
+        </view>
+        <view class="cell2 ce">
+            <view class="weui-label">
+                单位
+            </view>
+            <input bindinput="textIn" data-prop="unit" class="" placeholder="个/组"/>
+        </view>
+        <view class="cell3 ce">
+            <view class="weui-label">
+                价格
+            </view>
+            <input bindinput="textIn" data-prop="price" class="" placeholder="元"/>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input">
+    </view>
+    <view class="side-pic">
+        <view class="weui-cells__title">
+            实物图
+        </view>
+        <view class="weui-uploader">
+            <view class="weui-uploader__files" id="uploaderFiles">
+                <view class="weui-uploader__file" style="position: relative;" wx:if="{{photo}}">
+                    <image bindtap="previewImage" class="weui-uploader__img" mode="aspectFill" src="{{photo}}">
+                    </image>
+                    <view bindtap="deletePic" class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">
+                        X
+                    </view>
+                </view>
+                <view class="weui-uploader__input-box" wx:if="{{!photo}}">
+                    <view bindtap="chooseImage" class="weui-uploader__input">
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="side-input">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    最高售价
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" data-prop="maxprice" class="weui-input" placeholder=""/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    最低售价
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" data-prop="minprice" class="weui-input" placeholder=""/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">
+                    成本价
+                </view>
+            </view>
+            <view class="weui-cell__bd">
+                <input bindinput="textIn" data-prop="costprice" class="weui-input" placeholder=""/>
+            </view>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input relatecell">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                是否关联
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <radio-group bindchange="radioChange">
+                <label class="">
+                    <radio checked="1" class="weui-check" value="1">
+                    </radio>
+                    是
+                    <icon class="weui-icon-radio" size="16" type="success" wx:if="{{isRelated}}">
+                    </icon>
+                    <icon class="weui-icon-radio" size="16" type="circle" wx:if="{{!isRelated}}">
+                    </icon>
+                </label>
+                <label class="">
+                    <radio checked="0" class="weui-check" value="0">
+                    </radio>
+                    否
+                    <icon class="weui-icon-radio" size="16" type="success" wx:if="{{!isRelated}}">
+                    </icon>
+                    <icon class="weui-icon-radio" size="16" type="circle" wx:if="{{isRelated}}">
+                    </icon>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view  wx:if="{{isRelated}}" class="weui-cell weui-cell_input sel">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                关联物料选择
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <navigator url="../materialList/materialList?mode=select" value="">
+                <view class="weui-select">
+                    {{relatename}}
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="weui-cell weui-cell_input memo">
+        <view class="weui-cell__hd">
+            <view class="weui-label">
+                备注
+            </view>
+        </view>
+        <view class="weui-cell__bd">
+            <textarea bindchange="textIn" data-prop="description" class="weui-textarea" placeholder="" style="height: 3.3em">
+            </textarea>
+            <view class="weui-textarea-counter">
+                0/200
+            </view>
+        </view>
+    </view>
+    <button bindtap="submit" class="weui-btn">
+        提交
+    </button>
+</view>

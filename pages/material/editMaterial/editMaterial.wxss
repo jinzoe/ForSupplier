@@ -1,0 +1,36 @@
+.side-input{
+	width: 60%;
+	position: absolute;
+	height: 290rpx;
+	top: 460rpx;
+	left: 40%;
+}
+.side-pic{
+	height: 290rpx;
+	margin-left: 30rpx;
+}
+.relatecell{
+	height: 100rpx;
+}
+.cells{
+	height: 100rpx;
+}
+.ce{
+	width: 33%;
+}
+.ce .weui-label{
+	width : 80rpx;
+	float: left;
+}
+.ce input{
+	width: 100rpx;
+	float: left;
+	margin-left: 20rpx;
+	padding-top: 4rpx;
+}
+.weui-select{
+	border-right: 0;
+}
+.memo{
+	border-bottom: 1rpx solid #d9d9d9;
+}

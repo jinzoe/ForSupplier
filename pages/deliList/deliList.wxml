@@ -1,0 +1,37 @@
+<view class='container'>
+	<!-- <button bindtap='newDeli' class="weui-btn submit-btn">添加发货记录</button> -->
+	<view class="section">
+		 <view bindClick="radioChange" class="inline">
+      <label class="radio-container" wx:for="{{radioItems}}" wx:key="value">
+           <view class="inline">{{item.name}}</view>
+           <view class="doublr-tri inline">
+           		 <i class="t-tri"></i>
+           		 <i class="b-tri"></i>
+           </view> 
+      </label>
+  </view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}"  class="inline">
+      <view class="picker2 inline">
+        {{array[index]}}  <i class="triangle"></i>
+      </view>
+    </picker>
+	</view>
+	<view class='weui-panel'>
+		<view class="weui-panel__bd" >
+			<block wx:for="{{delis}}" wx:key='item'>
+				<navigator url ="../de{{item.receiveid}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+					<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+						<view class="weui-media-box__title">
+							<block wx:for='{{item.materials}}' wx:for-item='mat'>
+								{{mat.materialname}} 
+							</block>
+						</view>
+						<view class="weui-media-box__desc">发货日期：{{item.deliverydate}} | 收货日期：{{item.receivedate}}
+						</view>
+					</view>
+				</navigator>
+			</block>
+		</view>
+	</view>
+	<button class="add-btn" bindtap='newDeli'><i class="add-i">+</i></button>
+</view>

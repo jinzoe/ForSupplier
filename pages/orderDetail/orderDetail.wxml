@@ -1,0 +1,42 @@
+<view class="container">
+	 <view class="page__hd">
+        <view class="page__title">交货期：{{orderInfo.plandate}}</view>
+        <view class="page__desc">
+        	{{orderInfo.orderdeptname}}-{{orderInfo.orderusername}}
+        </view>
+    </view>
+    <view class='page__bd'>
+    	<view class="table">
+		  <view class="tr bg1">
+		    <view class="th m-name">物料</view>
+		    <view class="th m-spec">规格</view>
+		    <view class="th m-num ">数量</view>
+		    <view class="th m-unit">单价</view>
+		  </view>
+		  <block wx:for="{{orderInfo.materials}}" wx:key="{{code}}">
+		    <view class="tr bg8" wx:if="{{index % 2 == 0}}">
+		      <view class="td m-name">{{item.materialname}}</view>
+		      <view class="td m-spec">{{item.spec}}</view>
+		      <view class="td m-num">{{item.number}}</view>
+		      <view class="td m-unit">{{item.price}}</view>
+		    </view>
+		    <view class="tr bg7" wx:else>
+		      <view class="td m-name">{{item.materialname}}</view>
+		      <view class="td m-spec">{{item.spec}}</view>
+		      <view class="td m-num">{{item.number}}</view>
+		      <view class="td m-unit">{{item.price}}</view>
+		    </view>
+		  </block>
+		</view>
+		<view class="weui-panel">
+			<view class="weui-panel__bd">
+				<view class="weui-cells">
+					<view class="weui-cell">
+						总金额：{{orderInfo.totalmoney}}
+					</view>
+				</view>
+			</view>
+		</view>
+		<button class="submit-btn" bindtap="newDeli">发货</button>
+    </view>
+</view>

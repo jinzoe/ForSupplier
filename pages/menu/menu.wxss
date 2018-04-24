@@ -1,0 +1,38 @@
+/* pages/menu/menu.wxss */
+.banner{
+  height: 110rpx;
+  font-size: 70rpx;
+  text-decoration: bolder;
+  line-height: 140rpx;
+  padding: 50rpx; 
+}
+.menu{
+  color: white;
+  height: 150rpx;
+  font-size: 50rpx;
+  line-height: 150rpx;
+  padding-left: 100rpx;
+  /*opacity: 0.7;*/
+}/*
+.contract{
+	background-color: #006064;
+}
+.order{
+	background-color: #00838F;
+}
+.deli{
+	background-color: #00897B;
+}
+.bill{
+	background-color: #0097a7;
+}*/
+.weui-cell__ft_in-access{
+  right: 40px;
+  margin-top: -70rpx;
+}
+
+
+
+span{
+	font-size: 30rpx;
+}

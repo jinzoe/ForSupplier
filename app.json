@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/statistic/statistic",
+    "pages/menu/menu",
+    "pages/about/about",
+    "pages/index/index",
+    "pages/material/editMaterial/editMaterial",
+    "pages/material/materialList/materialList",
+    "pages/material/materialManage",
+    "pages/deliList/deliList",
+    "pages/QAList/QAList",
+    "pages/orderList/orderList",
+    "pages/newDelivery/newDelivery",
+    "pages/orderDetail/orderDetail",
+    "pages/contractList/contractList",
+    "pages/login/login",
+    "pages/QADetail/QADetail",
+    "pages/logs/logs",
+    "pages/register/register",
+    "pages/scanCode/scanCode"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "image/icon_msgbox.png",
+        "iconPath": "image/s_icon_msgbox.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "selectedIconPath": "image/icon_menu.png",
+        "iconPath": "image/s_icon_menu.png",
+        "text": "菜单"
+      }
+    ]
+  }
+}

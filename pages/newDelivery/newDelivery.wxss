@@ -1,0 +1,17 @@
+.weui-uploader{
+	margin: 0 12px;
+}
+.weui-input{
+	height: 1.1em;
+	min-height: 1.1em;
+	line-height: 1.1em;
+}
+.weui-btn{
+	background-color: rgb(63,93,101);
+	color: white;
+	width: 550rpx;
+}
+
+.weui-select{
+	border-right: 0rpx;
+}

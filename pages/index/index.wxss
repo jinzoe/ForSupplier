@@ -1,0 +1,30 @@
+/**index.wxss**/
+
+.supplierInfo{
+  padding: 0 15px;
+}
+.supplierName{
+	font-size : 1.5em;
+	margin-bottom: 25rpx;
+}
+.phone ,.address{
+	font-size: 0.9em;
+	color: #BDBCBC;
+}
+.non{
+	text-align: center;
+}
+.weui-panel{
+  padding: 0;
+  border-bottom: 0px;
+}
+.setting-icon{
+	width: 50rpx;
+	height: 50rpx;
+	
+}
+.about{
+	position: absolute;
+	left: 650rpx;
+	top: 30rpx;
+}

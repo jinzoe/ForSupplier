@@ -1,0 +1,17 @@
+/* pages/conractList/contractList.wxss */
+radio{
+	position: relative;
+	bottom: 4rpx;
+	left:  12rpx;
+	margin-right:  12rpx;
+}
+.fixed-bottom-tip{
+  position: fixed;
+  bottom: 0px;
+  font-size: .8em;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: #eee;
+  color: gray;
+}

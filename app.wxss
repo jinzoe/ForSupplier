@@ -1,0 +1,213 @@
+/**app.wxss**/
+
+@import 'weui.wxss';
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: rgb(63,93,101);
+  margin: 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  white-space: nowrap;
+  overflow-x: hidden;
+} 
+
+/*.page__bd {
+    padding-bottom: 40px;
+}
+.page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.page__ft{
+    padding-bottom: 10px;
+    text-align: center;
+}*/
+
+.page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+}
+
+.table {
+  /*border: 1px solid #B2DFDB;*/
+  /*border-radius: 20rpx;*/
+  margin: 10rpx;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  min-height: 2.4rem;
+  align-items: center;
+}
+.td {
+    justify-content: center;
+    text-align: center;
+}
+
+.th {
+  justify-content: center;
+  display: flex;
+  height: 2.4rem;
+  align-items: center;
+}
+.submit-btn{
+	background-color: rgb(63,93,101);
+	color: white;
+	width: 550rpx;
+	margin-top: 40rpx;
+	margin-bottom: 20rpx;
+}
+/*背景色*/
+.bg0{
+	color: #fff;
+	background-color: rgb(50,69,76);
+}
+.bg1{
+	color: #fff;
+	background-color: rgb(63,93,101);
+}
+.bg2{
+	color: #fff;
+	background-color: #00796B;
+}
+.bg3{
+	color: #fff;
+	background-color: rgb(109,201,201);
+}
+.bg5{
+  color: #fff;
+  background-color: #4DB6AC;
+}
+.bg6{
+  color: #fff;
+  background-color: #80CBC4;
+}
+.bg7{
+	color: rgb(50,69,76);
+	background-color: #B2DFDB;
+}
+.bg8{
+  color: rgb(50,69,76);
+	background-color: #E0F2F1;
+}
+.bg9{
+  background: snow;
+}
+/*add黄色圆钮*/
+.add-btn{
+  position: fixed;
+  bottom: 100rpx;
+  right: 100rpx;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+  border: 2px solid #eee;
+  background: #FDD835;
+  color: rgb(50,69,76);
+  text-align: center;
+  z-index: 100;
+}
+.add-btn text{
+  font-size: 1.2em;
+  position:relative;
+  top:9%;
+  font-weight: bold;
+}
+.add-i{
+  position: relative;
+  font-size: 4em;
+  line-height: 115rpx;
+  left: rpx;
+  top: 4rpx;
+}
+/*top筛选行*/
+.section{
+  font-size: .7em;
+  padding-left: 20rpx;
+}
+.radio-container{
+  margin-right: 20rpx;
+}
+.t-tri{
+  width:0rpx;
+  height:0rpx;
+  border-top:10rpx solid transparent;
+  border-left:10rpx solid transparent;
+  border-right:10rpx solid transparent;
+  border-bottom:10rpx solid gray;
+  top: -25rpx;
+  left: 8px; 
+  position: relative;
+}
+.b-tri{
+  width:0rpx;
+  height:0rpx;
+  border-bottom:10rpx solid transparent;
+  border-left:10rpx solid transparent;
+  border-right:10rpx solid transparent;
+  border-top:10rpx solid gray;
+  top: 35rpx;
+  left: -2px;
+  position: relative;
+}
+.triangle{
+  width:0rpx;
+  height:0rpx;
+  border-bottom:12rpx solid transparent;
+  border-left:12rpx solid transparent;
+  border-right:12rpx solid transparent;
+  border-top:12rpx solid green;
+  top: 25rpx;
+  left: 15rpx;
+  position: relative;
+}
+.inline{
+  display: inline;
+}
+.picker1{
+  position: absolute;
+  left: 400rpx;
+  top: 20rpx;
+  width: 180rpx;
+}
+.picker2{
+  position: absolute;
+  left: 550rpx;
+  top: 20rpx;
+  width: 200rpx;
+}
+/*最下方提示条*/
+.fixed-bottom-tip{
+  position: fixed;
+  bottom: 0px;
+  font-size: .8em;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  background-color: #eee;
+  color: gray;
+}
+.scan{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 30rpx;
+  bottom: 16rpx;
+  z-index: 100;
+}
+input{
+  color: black;
+}

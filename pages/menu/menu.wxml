@@ -1,0 +1,28 @@
+<!--pages/menu/menu.wxml-->
+<view class="banner bg8">
+	J9cloud Menus
+</view>
+<view class='menus'>
+	<navigator class="menu bg7 contract" url="../contractList/contractList">
+		合同<view class="weui-cell__ft_in-access"></view>
+	</navigator>
+	<navigator class="menu bg6 order" url="../orderList/orderList">
+		订单<view class="weui-cell__ft_in-access"></view>
+	</navigator>
+	<!-- <view class="menu bg2 deli" bindtap='scan'>
+		扫码<view class="weui-cell__ft_in-access"></view>
+	</view> -->
+  <navigator class="menu bg5 deli"  url="../material/materialManage">
+		物料<view class="weui-cell__ft_in-access"></view>
+	</navigator>
+	<navigator class="menu bg2 deli" url="../deliList/deliList">
+		发货<view class="weui-cell__ft_in-access"></view>
+	</navigator>
+	<navigator class="menu bg1 deli" url="../QAList/QAList">
+		质检<view class="weui-cell__ft_in-access"></view>
+	</navigator>
+  <navigator class="menu bg0 deli" url="../statistic/statistic">
+		统计<view class="weui-cell__ft_in-access"></view>
+	</navigator>
+	<!-- <navigator class="menu bg0 bill" url="../bill/bill">发票<span>(功能未开放)</span></navigator> -->
+</view>

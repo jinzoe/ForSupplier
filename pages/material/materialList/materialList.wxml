@@ -1,0 +1,60 @@
+<view class="container">
+    <view class="section">
+        <!-- <view class="section__title"></view> -->
+        <radio-group bindchange="radioChange" class="inline">
+            <label class="radio-container" wx:for="{{radioItems}}" wx:key="value">
+                <view class="inline">
+                    {{item.name}}
+                </view>
+                <view class="doublr-tri inline">
+                    <i class="t-tri">
+                    </i>
+                    <i class="b-tri">
+                    </i>
+                </view>
+            </label>
+        </radio-group>
+        <picker bindchange="bindPickerChange" class="inline" range="{{array2}}" value="{{index2}}">
+            <view class="picker2 inline">
+                {{array2[index2]}}
+                <i class="triangle">
+                </i>
+            </view>
+        </picker>
+    </view>
+    <view class="weui-panel">
+        <view class="item-wrapper">
+            <view class="item-list" wx:for="{{materials}}" wx:for-index="index" wx:for-item="item" wx:key="that">
+                <view bindtouchend="touchE" bindtouchmove="touchM" bindtouchstart="touchS" class="item-info" data-index="{{index}}" style="left:{{item.left + 'rpx'}}">
+                    <image class="info-img" src="{{item.photo}}">
+                    </image>
+                    <view class="info-wrapper">
+                        <view class="info-desc">
+                            <view class="name">
+                                {{item.materialname}}
+                            </view>
+                            <view class="time">
+                                {{item.materialno}}
+                            </view>
+                        </view>
+                        <view class="info-content">
+                            {{item.info}}info
+                        </view>
+                    </view>
+                </view>
+                <view class="item-oper">
+                    <view bindtap="itemEdit" class="oper-edit" data-index="{{index}}">
+                        编辑
+                    </view>
+                    <view bindtap="itemDelete" class="oper-delete" data-index="{{index}}">
+                        删除
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="add-btn"><i class="add-i">+</i></view>
+<view class="fixed-bottom-tip">
+    右滑进行编辑和删除
+</view>
